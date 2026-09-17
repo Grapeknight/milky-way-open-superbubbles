@@ -4,7 +4,7 @@
 
 # 银河系如“幽灵星系”：恒星反馈塑造的气泡主导盘与拉德克利夫波的起源
 
-**完整代码、数据与结果：** [从 Releases v1.0.2 下载](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2)
+**完整代码、数据与结果：** [从 Releases V1.0 下载](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/V1.0)
 
 本仓库提供论文 *The Milky Way as a "Phantom Galaxy": A Bubble-Dominated Disk Sculpted by Stellar Feedback and the Origin of the Radcliffe Wave* 的分析代码。配合 Releases 中的完整包，可复现研究中的数据分析、验证分析、图件、数据表和交互式可视化。
 
@@ -16,15 +16,15 @@ AI 辅助使用声明：整理、撰写说明和一致性检查过程中使用�
 
 ## 下载完整发表包
 
-[GitHub 代码仓库](https://github.com/Grapeknight/milky-way-open-superbubbles)的根目录直接放置完整包 `code/` 中的文件，包括 Python 脚本、本 README、文档和运行入口；仓库内没有额外的 `code/` 子目录。直接克隆仓库仅获得代码，不会下载 `data/` 和 `results/`。完整输入数据和已保存结果通过 [Releases v1.0.2](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2) 分发，v1.0.0 保留为历史版本。GitHub 自动生成的 **Source code** 压缩包也只包含代码。
+[GitHub 代码仓库](https://github.com/Grapeknight/milky-way-open-superbubbles)的根目录直接放置完整包 `code/` 中的文件，包括 Python 脚本、本 README、文档和运行入口；仓库内没有额外的 `code/` 子目录。直接克隆仓库仅获得代码，不会下载 `data/` 和 `results/`。完整输入数据和已保存结果通过 [Releases V1.0](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/V1.0) 分发。GitHub 自动生成的 **Source code** 压缩包也只包含代码。
 
 请下载以下三个 ZIP 文件：
 
-- [milky-way-open-superbubbles-v1.0.2-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-code-data.zip)
-- [milky-way-open-superbubbles-v1.0.2-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-1.zip)
-- [milky-way-open-superbubbles-v1.0.2-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-2.zip)
+- [milky-way-open-superbubbles-V1.0-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/V1.0/milky-way-open-superbubbles-V1.0-code-data.zip)
+- [milky-way-open-superbubbles-V1.0-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/V1.0/milky-way-open-superbubbles-V1.0-results-1.zip)
+- [milky-way-open-superbubbles-V1.0-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/V1.0/milky-way-open-superbubbles-V1.0-results-2.zip)
 
-将三个压缩包解压到同一个父目录，合并共同的 `milky-way-open-superbubbles-v1.0.2/` 文件夹，即可得到 `code/`、`data/`、`results/` 三个目录。完整包的说明仍位于 `code/README.md`。这些是互相独立的普通 ZIP 文件，不需要分卷解压工具。
+将三个压缩包解压到同一个父目录，合并共同的 `milky-way-open-superbubbles-V1.0/` 文件夹，即可得到 `code/`、`data/`、`results/` 三个目录。完整包的说明仍位于 `code/README.md`。这些是互相独立的普通 ZIP 文件，不需要分卷解压工具。
 
 运行时进入完整包的 `code/`。如使用 Git 克隆代码，运行环境仍需保持代码目录与 `data/`、`results/` 同级；GitHub 根目录的文件对应完整包的 `code/` 内容。不要向已经解压、非空的 `code/` 目录直接执行 `git clone`。
 
@@ -130,7 +130,7 @@ milky-way-open-superbubbles/
 Releases 完整包保留 Code Ocean 的三个目录结构：
 
 ```text
-milky-way-open-superbubbles-v1.0.2/
+milky-way-open-superbubbles-V1.0/
 |-- code/
 |   |-- 00_Data_preparation_1.py
 |   |-- 00_Data_preparation_2.py

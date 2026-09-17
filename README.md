@@ -4,7 +4,7 @@
 
 # The Milky Way as a "Phantom Galaxy": A Bubble-Dominated Disk Sculpted by Stellar Feedback and the Origin of the Radcliffe Wave
 
-**Complete code, data and results:** [Download from Releases v1.0.2](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2)
+**Complete code, data and results:** [Download from Releases V1.0](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/V1.0)
 
 This repository provides the code for the end-to-end publication package for the paper *The Milky Way as
 a "Phantom Galaxy": A Bubble-Dominated Disk Sculpted by Stellar Feedback and
@@ -38,18 +38,17 @@ the repository root: Python scripts, this README, documentation, and run entry
 points. There is no extra `code/` subdirectory in the GitHub repository.
 Cloning the repository downloads code only; it does not download `data/` or
 `results/`. Input data and saved results
-are distributed as assets of [release v1.0.2](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2).
+are distributed as assets of [release V1.0](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/V1.0).
 GitHub's automatically generated **Source code** archives contain the code only.
 
-Version v1.0.0 remains available as a historical release.
-For the complete package, download these three ZIP files from release v1.0.2:
+For the complete package, download these three ZIP files from release V1.0:
 
-- [milky-way-open-superbubbles-v1.0.2-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-code-data.zip)
-- [milky-way-open-superbubbles-v1.0.2-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-1.zip)
-- [milky-way-open-superbubbles-v1.0.2-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-2.zip)
+- [milky-way-open-superbubbles-V1.0-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/V1.0/milky-way-open-superbubbles-V1.0-code-data.zip)
+- [milky-way-open-superbubbles-V1.0-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/V1.0/milky-way-open-superbubbles-V1.0-results-1.zip)
+- [milky-way-open-superbubbles-V1.0-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/V1.0/milky-way-open-superbubbles-V1.0-results-2.zip)
 
 Extract all three archives into the same parent directory, merging the common
-`milky-way-open-superbubbles-v1.0.2/` folder. The resulting capsule contains
+`milky-way-open-superbubbles-V1.0/` folder. The resulting capsule contains
 `code/`, `data/`, and `results/`; the main instructions remain in `code/README.md`.
 The archives are ordinary independent ZIP files and do not require a split-archive utility.
 
@@ -185,7 +184,7 @@ milky-way-open-superbubbles/
 The complete release package preserves the Code Ocean capsule layout:
 
 ```text
-milky-way-open-superbubbles-v1.0.2/
+milky-way-open-superbubbles-V1.0/
 |-- code/
 |   |-- 00_Data_preparation_1.py
 |   |-- 00_Data_preparation_2.py
