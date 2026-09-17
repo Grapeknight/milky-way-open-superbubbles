@@ -4,7 +4,7 @@
 
 # The Milky Way as a "Phantom Galaxy": A Bubble-Dominated Disk Sculpted by Stellar Feedback and the Origin of the Radcliffe Wave
 
-**Complete code, data and results:** [Download from Releases v1.0.1](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.1)
+**Complete code, data and results:** [Download from Releases v1.0.2](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2)
 
 This repository provides the code for the end-to-end publication package for the paper *The Milky Way as
 a "Phantom Galaxy": A Bubble-Dominated Disk Sculpted by Stellar Feedback and
@@ -38,18 +38,18 @@ the repository root: Python scripts, this README, documentation, and run entry
 points. There is no extra `code/` subdirectory in the GitHub repository.
 Cloning the repository downloads code only; it does not download `data/` or
 `results/`. Input data and saved results
-are distributed as assets of [release v1.0.1](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.1).
+are distributed as assets of [release v1.0.2](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2).
 GitHub's automatically generated **Source code** archives contain the code only.
 
 Version v1.0.0 remains available as a historical release.
-For the complete package, download these three ZIP files from release v1.0.1:
+For the complete package, download these three ZIP files from release v1.0.2:
 
-- [milky-way-open-superbubbles-v1.0.1-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.1/milky-way-open-superbubbles-v1.0.1-code-data.zip)
-- [milky-way-open-superbubbles-v1.0.1-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.1/milky-way-open-superbubbles-v1.0.1-results-1.zip)
-- [milky-way-open-superbubbles-v1.0.1-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.1/milky-way-open-superbubbles-v1.0.1-results-2.zip)
+- [milky-way-open-superbubbles-v1.0.2-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-code-data.zip)
+- [milky-way-open-superbubbles-v1.0.2-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-1.zip)
+- [milky-way-open-superbubbles-v1.0.2-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-2.zip)
 
 Extract all three archives into the same parent directory, merging the common
-`milky-way-open-superbubbles-v1.0.1/` folder. The resulting capsule contains
+`milky-way-open-superbubbles-v1.0.2/` folder. The resulting capsule contains
 `code/`, `data/`, and `results/`; the main instructions remain in `code/README.md`.
 The archives are ordinary independent ZIP files and do not require a split-archive utility.
 
@@ -98,17 +98,17 @@ In the table, paths are direct relative paths from `code/`: generated intermedia
 
 | Order | Script | Runtime | Main task | Main outputs and manuscript use |
 |---:|---|---:|---|---|
-| 0a | `0_Data_preparation_1.py` | 20 min 58.49 s | Build raw/smoothed 3D dust cubes, XY mean dust map, and Radcliffe-Wave dust slice from `dustmaps3d` using memory-bounded chunked output. | Reproducible intermediate inputs in `../results/intermediate_output/3d_dust_map_products/` for scripts 5, 8, 11, 12, 23, 24, 25. |
-| 0b | `0_Data_preparation_2.py` | > 6 h (external raw-data export) | Export compact MWISP/CfA/HI4PI PV caches from external original FITS cubes. This step cannot be run from the package alone because the several-hundred-GB raw cubes are not included. | `../data/COdata/`, `../data/HIdata/`; these compact caches are included and used by scripts 21 and 22. |
-| 1 | `1_OSBs_first_contact_MCs.py` | 3.27 s | Identify first-contact molecular clouds along rays for each open-superbubble seed. | `../results/intermediate_output/1_first_contact_molecular_clouds/`; input to scripts 2 and 3. |
-| 2 | `2_OSBs_3D_fitting.py` | 0.91 s | Fit ellipsoidal-cap or elliptical-cylinder shell geometry to first-contact clouds. | `../results/intermediate_output/2_automated_fit_results/`; input to scripts 3 and 4. |
-| 3 | `3_OSBs_MCMC_and_parameter_table.py` | 1 min 16.63 s | Estimate MCMC uncertainties and assemble the final 30-object parameter table. | `../results/superbubble_final_fit_parameters.csv`, `../results/figures/3_mcmc_analysis.png`, corner plots; source of the full catalogue table and MCMC diagnostics. |
-| 4 | `4_OSBs_plotting.py` | 1 h 02 min 35.22 s | Draw the six-panel identification map for each superbubble. | `../results/SB_figures/SB{N}.png`; used in the Supplementary Information and Extended Data SB panels. |
-| 5 | `5_OSBs_parameter_statistics.py` | 9 min 15.09 s | Measure cavity/shell/ridge statistics and evidence-grade parameters. | `../results/figures/5_parameter_histogram_matrix.png`; Extended Data parameter histogram. |
-| 6 | `6_OSBs_initial_sensitivity.py` | 37 min 30.93 s | Perturb initial geometry and retest first-contact cloud recovery. | `../results/figures/6_initial_sensitivity_overlap.png`; initial-condition sensitivity figure. |
-| 7 | `7_OSBs_recall_analysis.py` | 0.95 s | Analyze independent repeat-identification and observer agreement. | `../results/figures/7_independent_repeat_recall.png`; independent-identification recall figure. |
-| 8 | `8_OSBs_random_dust_test.py` | 3 h 12 min 21.40 s | Run 3D IAAFT random-density-fluctuation tests at fixed fitted geometry. | `../results/figures/8_condition_test_joint_p_all30.png`; random-density test figure. |
-| 9 | `9_OSBs_shell_amplitude_test.py` | 35.22 s | Compare shell jump amplitudes with extinction-map and stellar-sample uncertainties; automatically detects an installed `dustmaps3d` cache when needed. | `../results/figures/9_shell_amplitude_vs_extinction_error_3sigma.png`; shell-significance figure. |
+| 0a | `00_Data_preparation_1.py` | 20 min 58.49 s | Build raw/smoothed 3D dust cubes, XY mean dust map, and Radcliffe-Wave dust slice from `dustmaps3d` using memory-bounded chunked output. | Reproducible intermediate inputs in `../results/intermediate_output/3d_dust_map_products/` for scripts 5, 8, 11, 12, 23, 24, 25. |
+| 0b | `00_Data_preparation_2.py` | > 6 h (external raw-data export) | Export compact MWISP/CfA/HI4PI PV caches from external original FITS cubes. This step cannot be run from the package alone because the several-hundred-GB raw cubes are not included. | `../data/COdata/`, `../data/HIdata/`; these compact caches are included and used by scripts 21 and 22. |
+| 1 | `01_OSBs_first_contact_MCs.py` | 3.27 s | Identify first-contact molecular clouds along rays for each open-superbubble seed. | `../results/intermediate_output/1_first_contact_molecular_clouds/`; input to scripts 2 and 3. |
+| 2 | `02_OSBs_3D_fitting.py` | 0.91 s | Fit ellipsoidal-cap or elliptical-cylinder shell geometry to first-contact clouds. | `../results/intermediate_output/2_automated_fit_results/`; input to scripts 3 and 4. |
+| 3 | `03_OSBs_MCMC_and_parameter_table.py` | 1 min 16.63 s | Estimate MCMC uncertainties and assemble the final 30-object parameter table. | `../results/superbubble_final_fit_parameters.csv`, `../results/figures/3_mcmc_analysis.png`, corner plots; source of the full catalogue table and MCMC diagnostics. |
+| 4 | `04_OSBs_plotting.py` | 1 h 02 min 35.22 s | Draw the six-panel identification map for each superbubble. | `../results/SB_figures/SB{N}.png`; used in the Supplementary Information and Extended Data SB panels. |
+| 5 | `05_OSBs_parameter_statistics.py` | 9 min 15.09 s | Measure cavity/shell/ridge statistics and evidence-grade parameters. | `../results/figures/5_parameter_histogram_matrix.png`; Extended Data parameter histogram. |
+| 6 | `06_OSBs_initial_sensitivity.py` | 37 min 30.93 s | Perturb initial geometry and retest first-contact cloud recovery. | `../results/figures/6_initial_sensitivity_overlap.png`; initial-condition sensitivity figure. |
+| 7 | `07_OSBs_recall_analysis.py` | 0.95 s | Analyze independent repeat-identification and observer agreement. | `../results/figures/7_independent_repeat_recall.png`; independent-identification recall figure. |
+| 8 | `08_OSBs_random_dust_test.py` | 3 h 12 min 21.40 s | Run 3D IAAFT random-density-fluctuation tests at fixed fitted geometry. | `../results/figures/8_condition_test_joint_p_all30.png`; random-density test figure. |
+| 9 | `09_OSBs_shell_amplitude_test.py` | 35.22 s | Compare shell jump amplitudes with extinction-map and stellar-sample uncertainties; automatically detects an installed `dustmaps3d` cache when needed. | `../results/figures/9_shell_amplitude_vs_extinction_error_3sigma.png`; shell-significance figure. |
 | 10 | `10_OSBs_bubbles_HMSFR_test.py` | 11 min 09.93 s | Count shell-associated Grade A/B bubbles and HMSFRs; run random geometry controls. | `../results/figures/10_shell_assignment_xy.png`, `10_shell_count_random_test_overview.png`; feedback-tracer association figures. |
 | 11 | `11_OSBs_top_view.py` | 21.01 s | Draw face-on open-superbubble overview and RGB layered dust map. | `../results/figures/11_topview_rgb_dust_layers.png`; source panel for main-text Fig. 1. |
 | 12 | `12_OSBs_dust_slices.py` | 11.47 s | Draw three vertical dust slices with open-superbubble ellipses, bubbles, and HMSFRs. | `../results/figures/12_three_dust_slices.png`; main-text Fig. 2. |
@@ -163,7 +163,7 @@ respectively.
 
 The Supplementary Information figure provenance is not itemized here. All
 Supplementary Information open-superbubble identification figures are generated
-by `4_OSBs_plotting.py` and stored in `../results/SB_figures/`.
+by `04_OSBs_plotting.py` and stored in `../results/SB_figures/`.
 
 ## Repository and complete-package contents
 
@@ -171,12 +171,13 @@ The GitHub code repository has this root layout:
 
 ```text
 milky-way-open-superbubbles/
-|-- 0_Data_preparation_1.py
-|-- 0_Data_preparation_2.py
-|-- 1_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
+|-- 00_Data_preparation_1.py
+|-- 00_Data_preparation_2.py
+|-- 01_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
 |-- final_data_products_description.md
 |-- pipeline_runtime_summary.png
 |-- README.md
+|-- README.zh-CN.md
 |-- run
 `-- run.sh
 ```
@@ -184,14 +185,15 @@ milky-way-open-superbubbles/
 The complete release package preserves the Code Ocean capsule layout:
 
 ```text
-milky-way-open-superbubbles-v1.0.1/
+milky-way-open-superbubbles-v1.0.2/
 |-- code/
-|   |-- 0_Data_preparation_1.py
-|   |-- 0_Data_preparation_2.py
-|   |-- 1_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
+|   |-- 00_Data_preparation_1.py
+|   |-- 00_Data_preparation_2.py
+|   |-- 01_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
 |   |-- final_data_products_description.md
 |   |-- pipeline_runtime_summary.png
 |   |-- README.md
+|   |-- README.zh-CN.md
 |   |-- run
 |   `-- run.sh
 |-- data/
@@ -232,10 +234,10 @@ Approximate package sizes in the current local copy:
 - Internet: required for dependency installation, the first `dustmaps3d` cache
   download if needed, and loading the interactive viewer's Three.js modules.
 - Memory: at least 16 GB recommended for the full workflow; large raw FITS
-  preprocessing in `0_Data_preparation_2.py` can require more, depending on the
+  preprocessing in `00_Data_preparation_2.py` can require more, depending on the
   input cubes.
 
-Windows note: `4_OSBs_plotting.py` uses `healpy` for all-sky panels. In the
+Windows note: `04_OSBs_plotting.py` uses `healpy` for all-sky panels. In the
 tested native Windows Python environment, run the workflow through WSL. On
 Code Ocean, Linux, or macOS, it can be run directly if `healpy` is installed.
 
@@ -285,7 +287,7 @@ WSL so the Linux Python and `healpy` installation are used by `run.sh`.
 
 First use of `dustmaps3d` may download the Wang et al. 3D dust-map cache. The
 processed dust products needed by most scripts are generated by
-`0_Data_preparation_1.py` under `../results/intermediate_output/3d_dust_map_products/`
+`00_Data_preparation_1.py` under `../results/intermediate_output/3d_dust_map_products/`
 inside the run output area.
 
 ## Quick start
@@ -304,7 +306,7 @@ On Windows, open WSL, change to the complete capsule root, activate the WSL virt
 environment created above, and run the same commands. A native Windows Python
 virtual environment is separate from the WSL environment.
 
-The exception is `0_Data_preparation_2.py`: it cannot be executed from this
+The exception is `00_Data_preparation_2.py`: it cannot be executed from this
 package alone because it requires the original HI4PI, CfA CO, and MWISP FITS
 cubes. Those raw data are several hundred GB and are not included here. This
 package includes the compact PV cache products and the code used to export those
@@ -321,22 +323,22 @@ Then run the scripts in order:
 
 ```powershell
 # Builds the reproducible 3D dust products under ../results/intermediate_output/3d_dust_map_products/.
-python 0_Data_preparation_1.py
+python 00_Data_preparation_1.py
 
 # Optional from-raw-data step only.
 # Requires external raw HI4PI, CfA CO, and Galactic Plane Survey / MWISP data.
 # The resulting compact PV caches are already included in ../data/COdata/ and ../data/HIdata/.
-# python 0_Data_preparation_2.py --mwisp-fits <path> --cfa-fits <path> --hi4pi-fits <path>
+# python 00_Data_preparation_2.py --mwisp-fits <path> --cfa-fits <path> --hi4pi-fits <path>
 
-python 1_OSBs_first_contact_MCs.py
-python 2_OSBs_3D_fitting.py
-python 3_OSBs_MCMC_and_parameter_table.py
-python 4_OSBs_plotting.py
-python 5_OSBs_parameter_statistics.py
-python 6_OSBs_initial_sensitivity.py
-python 7_OSBs_recall_analysis.py
-python 8_OSBs_random_dust_test.py
-python 9_OSBs_shell_amplitude_test.py
+python 01_OSBs_first_contact_MCs.py
+python 02_OSBs_3D_fitting.py
+python 03_OSBs_MCMC_and_parameter_table.py
+python 04_OSBs_plotting.py
+python 05_OSBs_parameter_statistics.py
+python 06_OSBs_initial_sensitivity.py
+python 07_OSBs_recall_analysis.py
+python 08_OSBs_random_dust_test.py
+python 09_OSBs_shell_amplitude_test.py
 python 10_OSBs_bubbles_HMSFR_test.py
 python 11_OSBs_top_view.py
 python 12_OSBs_dust_slices.py
@@ -357,20 +359,20 @@ python 25_interactive_three_volume_viewer.py
 
 Script 4 is not expected to run in the tested native Windows Python
 environment. On Windows, run `bash run.sh` through WSL; on Code Ocean, Linux, or
-macOS, run `python 4_OSBs_plotting.py` directly if `healpy` is installed.
+macOS, run `python 04_OSBs_plotting.py` directly if `healpy` is installed.
 
 ## Data preparation notes
 
 The two `0_` scripts generate shared data products used by later scripts.
 
-`0_Data_preparation_1.py` builds:
+`00_Data_preparation_1.py` builds:
 
 - `../results/intermediate_output/3d_dust_map_products/raw_3d_dust_cube.parquet`
 - `../results/intermediate_output/3d_dust_map_products/smoothed_3d_dust_cube.parquet`
 - `../results/intermediate_output/3d_dust_map_products/xy_mean_dust_map.parquet`
 - `../results/intermediate_output/3d_dust_map_products/radcliffe_wave_dust_slice.csv`
 
-`0_Data_preparation_2.py` is provided to document how the compact CO/HI PV
+`00_Data_preparation_2.py` is provided to document how the compact CO/HI PV
 caches were exported from the original raw survey cubes:
 
 - code-relative `../data/COdata/MWISP_12CO_PV_cache.npz`
@@ -389,7 +391,7 @@ compact PV caches needed by scripts 21 and 22 are included instead. To rebuild
 the caches from raw data, pass the raw data paths explicitly:
 
 ```powershell
-python 0_Data_preparation_2.py `
+python 00_Data_preparation_2.py `
   --mwisp-fits <path-to-mosaic_12CO.fits> `
   --cfa-fits <path-to-CfA-FITS-cube> `
   --hi4pi-fits <path-to-HI4PI-CAR.fits>
@@ -462,7 +464,7 @@ and surroundings, to set the IAAFT Fourier amplitudes after missing-value
 filling and optional block averaging. It preserves the density distribution
 exactly and approximates the spectrum. The default is 8 iterations;
 iteration count alone is not a convergence guarantee. See
-[the method and diagnostic documentation in Script 8](8_OSBs_random_dust_test.py).
+[the method and diagnostic documentation in Script 8](08_OSBs_random_dust_test.py).
 
 Each of the 30 targets also saves `8_SB{id}_original_vs_random.png` (PNG only)
 in `../results/figures/random_density_diagnostics/`, using
@@ -483,12 +485,12 @@ The arrays, spectral tables and metadata go to
 Paths recorded in the diagnostic metadata are relative to `code/` for
 portability; this path convention does not alter the scientific statistics.
 From `code/`, run
-`python 8_OSBs_random_dust_test.py --targets all --diagnostics-only --iaaft-max-iter 8`
+`python 08_OSBs_random_dust_test.py --targets all --diagnostics-only --iaaft-max-iter 8`
 to generate one comparison per target without rewriting Monte Carlo sample or
 probability tables.
 Use `--diagnostic-dir` and `--comparison-fig-dir` for separate diagnostic runs.
 
-- `0_Data_preparation_2.py` processes the original HI4PI, CfA CO, and Galactic
+- `00_Data_preparation_2.py` processes the original HI4PI, CfA CO, and Galactic
   Plane Survey / MWISP FITS cubes. Those raw inputs are several hundred GB and
   are not included; the compact downstream PV caches are included.
 - Script 8 is the longest standard analysis script because it runs 3D IAAFT

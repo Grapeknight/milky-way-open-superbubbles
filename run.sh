@@ -19,21 +19,21 @@ mkdir -p "${RESULTS_ROOT}" "${INTERMEDIATE_OUTPUT_DIR}"
 
 cd "${SCRIPT_DIR}"
 
-python3 0_Data_preparation_1.py
+python3 00_Data_preparation_1.py
 
-# 0_Data_preparation_2.py is intentionally not executed in this capsule.
+# 00_Data_preparation_2.py is intentionally not executed in this capsule.
 # It documents PV-cache export from the original MWISP/CfA/HI4PI survey data,
 # which are too large to redistribute with the publication package.
 
-python3 1_OSBs_first_contact_MCs.py
-python3 2_OSBs_3D_fitting.py
-python3 3_OSBs_MCMC_and_parameter_table.py
-python3 4_OSBs_plotting.py
-python3 5_OSBs_parameter_statistics.py
-python3 6_OSBs_initial_sensitivity.py
-python3 7_OSBs_recall_analysis.py
-python3 8_OSBs_random_dust_test.py
-python3 9_OSBs_shell_amplitude_test.py
+python3 01_OSBs_first_contact_MCs.py
+python3 02_OSBs_3D_fitting.py
+python3 03_OSBs_MCMC_and_parameter_table.py
+python3 04_OSBs_plotting.py
+python3 05_OSBs_parameter_statistics.py
+python3 06_OSBs_initial_sensitivity.py
+python3 07_OSBs_recall_analysis.py
+python3 08_OSBs_random_dust_test.py
+python3 09_OSBs_shell_amplitude_test.py
 python3 10_OSBs_bubbles_HMSFR_test.py
 python3 11_OSBs_top_view.py
 python3 12_OSBs_dust_slices.py

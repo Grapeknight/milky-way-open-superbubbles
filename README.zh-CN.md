@@ -4,7 +4,7 @@
 
 # 银河系如“幽灵星系”：恒星反馈塑造的气泡主导盘与拉德克利夫波的起源
 
-**完整代码、数据与结果：** [从 Releases v1.0.1 下载](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.1)
+**完整代码、数据与结果：** [从 Releases v1.0.2 下载](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2)
 
 本仓库提供论文 *The Milky Way as a "Phantom Galaxy": A Bubble-Dominated Disk Sculpted by Stellar Feedback and the Origin of the Radcliffe Wave* 的分析代码。配合 Releases 中的完整包，可复现研究中的数据分析、验证分析、图件、数据表和交互式可视化。
 
@@ -16,15 +16,15 @@ AI 辅助使用声明：整理、撰写说明和一致性检查过程中使用�
 
 ## 下载完整发表包
 
-[GitHub 代码仓库](https://github.com/Grapeknight/milky-way-open-superbubbles)的根目录直接放置完整包 `code/` 中的文件，包括 Python 脚本、本 README、文档和运行入口；仓库内没有额外的 `code/` 子目录。直接克隆仓库仅获得代码，不会下载 `data/` 和 `results/`。完整输入数据和已保存结果通过 [Releases v1.0.1](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.1) 分发，v1.0.0 保留为历史版本。GitHub 自动生成的 **Source code** 压缩包也只包含代码。
+[GitHub 代码仓库](https://github.com/Grapeknight/milky-way-open-superbubbles)的根目录直接放置完整包 `code/` 中的文件，包括 Python 脚本、本 README、文档和运行入口；仓库内没有额外的 `code/` 子目录。直接克隆仓库仅获得代码，不会下载 `data/` 和 `results/`。完整输入数据和已保存结果通过 [Releases v1.0.2](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/tag/v1.0.2) 分发，v1.0.0 保留为历史版本。GitHub 自动生成的 **Source code** 压缩包也只包含代码。
 
 请下载以下三个 ZIP 文件：
 
-- [milky-way-open-superbubbles-v1.0.1-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.1/milky-way-open-superbubbles-v1.0.1-code-data.zip)
-- [milky-way-open-superbubbles-v1.0.1-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.1/milky-way-open-superbubbles-v1.0.1-results-1.zip)
-- [milky-way-open-superbubbles-v1.0.1-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.1/milky-way-open-superbubbles-v1.0.1-results-2.zip)
+- [milky-way-open-superbubbles-v1.0.2-code-data.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-code-data.zip)
+- [milky-way-open-superbubbles-v1.0.2-results-1.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-1.zip)
+- [milky-way-open-superbubbles-v1.0.2-results-2.zip](https://github.com/Grapeknight/milky-way-open-superbubbles/releases/download/v1.0.2/milky-way-open-superbubbles-v1.0.2-results-2.zip)
 
-将三个压缩包解压到同一个父目录，合并共同的 `milky-way-open-superbubbles-v1.0.1/` 文件夹，即可得到 `code/`、`data/`、`results/` 三个目录。完整包的说明仍位于 `code/README.md`。这些是互相独立的普通 ZIP 文件，不需要分卷解压工具。
+将三个压缩包解压到同一个父目录，合并共同的 `milky-way-open-superbubbles-v1.0.2/` 文件夹，即可得到 `code/`、`data/`、`results/` 三个目录。完整包的说明仍位于 `code/README.md`。这些是互相独立的普通 ZIP 文件，不需要分卷解压工具。
 
 运行时进入完整包的 `code/`。如使用 Git 克隆代码，运行环境仍需保持代码目录与 `data/`、`results/` 同级；GitHub 根目录的文件对应完整包的 `code/` 内容。不要向已经解压、非空的 `code/` 目录直接执行 `git clone`。
 
@@ -50,17 +50,17 @@ AI 辅助使用声明：整理、撰写说明和一致性检查过程中使用�
 
 | 顺序 | 脚本 | 参考耗时 | 主要任务 | 主要输出及论文用途 |
 |---:|---|---:|---|---|
-| 0a | `0_Data_preparation_1.py` | 20 min 58.49 s | 使用 dustmaps3d，以限制内存占用的分块方式建立原始/平滑三维尘埃立方体、XY 平均尘埃图和拉德克利夫波尘埃截面。 | 在 `../results/intermediate_output/3d_dust_map_products/` 生成可复现中间数据，供脚本 5、8、11、12、23、24、25 使用。 |
-| 0b | `0_Data_preparation_2.py` | > 6 h (外部原始数据导出) | 从外部原始 FITS 立方体导出紧凑的 MWISP/CfA/HI4PI 位置—速度（PV）缓存。数百 GB 的原始数据未随包分发，仅靠完整包不能运行此步骤。 | `../data/COdata/`、`../data/HIdata/`；已包含这些紧凑缓存，供脚本 21、22 使用。 |
-| 1 | `1_OSBs_first_contact_MCs.py` | 3.27 s | 从每个开放超泡的初始位置沿射线识别首次接触的分子云。 | `../results/intermediate_output/1_first_contact_molecular_clouds/`；供脚本 2、3 使用。 |
-| 2 | `2_OSBs_3D_fitting.py` | 0.91 s | 根据首次接触分子云拟合椭球帽或椭圆柱壳层几何。 | `../results/intermediate_output/2_automated_fit_results/`；供脚本 3、4 使用。 |
-| 3 | `3_OSBs_MCMC_and_parameter_table.py` | 1 min 16.63 s | 利用 MCMC 估计不确定度，汇总 30 个目标的最终参数表。 | `../results/superbubble_final_fit_parameters.csv`、`../results/figures/3_mcmc_analysis.png` 和 corner 图；提供完整星表和 MCMC 诊断。 |
-| 4 | `4_OSBs_plotting.py` | 1 h 02 min 35.22 s | 为每个超泡绘制六面板识别图。 | `../results/SB_figures/SB{N}.png`；用于补充信息和扩展数据中的超泡图。 |
-| 5 | `5_OSBs_parameter_statistics.py` | 9 min 15.09 s | 测量空腔、壳层、密度脊统计量及证据分级参数。 | `../results/figures/5_parameter_histogram_matrix.png`；扩展数据参数分布图。 |
-| 6 | `6_OSBs_initial_sensitivity.py` | 37 min 30.93 s | 扰动初始几何，重新检验首次接触分子云的恢复情况。 | `../results/figures/6_initial_sensitivity_overlap.png`；初始条件敏感性图。 |
-| 7 | `7_OSBs_recall_analysis.py` | 0.95 s | 分析独立重复识别结果及不同识别者的一致性。 | `../results/figures/7_independent_repeat_recall.png`；独立识别召回率图。 |
-| 8 | `8_OSBs_random_dust_test.py` | 3 h 12 min 21.40 s | 在固定拟合几何下运行三维 IAAFT 随机密度涨落检验。 | `../results/figures/8_condition_test_joint_p_all30.png`；随机密度检验图。 |
-| 9 | `9_OSBs_shell_amplitude_test.py` | 35.22 s | 比较壳层密度跃变幅度与消光图、恒星样本的不确定度；需要时自动定位已安装的 dustmaps3d 缓存。 | `../results/figures/9_shell_amplitude_vs_extinction_error_3sigma.png`；壳层显著性图。 |
+| 0a | `00_Data_preparation_1.py` | 20 min 58.49 s | 使用 dustmaps3d，以限制内存占用的分块方式建立原始/平滑三维尘埃立方体、XY 平均尘埃图和拉德克利夫波尘埃截面。 | 在 `../results/intermediate_output/3d_dust_map_products/` 生成可复现中间数据，供脚本 5、8、11、12、23、24、25 使用。 |
+| 0b | `00_Data_preparation_2.py` | > 6 h (外部原始数据导出) | 从外部原始 FITS 立方体导出紧凑的 MWISP/CfA/HI4PI 位置—速度（PV）缓存。数百 GB 的原始数据未随包分发，仅靠完整包不能运行此步骤。 | `../data/COdata/`、`../data/HIdata/`；已包含这些紧凑缓存，供脚本 21、22 使用。 |
+| 1 | `01_OSBs_first_contact_MCs.py` | 3.27 s | 从每个开放超泡的初始位置沿射线识别首次接触的分子云。 | `../results/intermediate_output/1_first_contact_molecular_clouds/`；供脚本 2、3 使用。 |
+| 2 | `02_OSBs_3D_fitting.py` | 0.91 s | 根据首次接触分子云拟合椭球帽或椭圆柱壳层几何。 | `../results/intermediate_output/2_automated_fit_results/`；供脚本 3、4 使用。 |
+| 3 | `03_OSBs_MCMC_and_parameter_table.py` | 1 min 16.63 s | 利用 MCMC 估计不确定度，汇总 30 个目标的最终参数表。 | `../results/superbubble_final_fit_parameters.csv`、`../results/figures/3_mcmc_analysis.png` 和 corner 图；提供完整星表和 MCMC 诊断。 |
+| 4 | `04_OSBs_plotting.py` | 1 h 02 min 35.22 s | 为每个超泡绘制六面板识别图。 | `../results/SB_figures/SB{N}.png`；用于补充信息和扩展数据中的超泡图。 |
+| 5 | `05_OSBs_parameter_statistics.py` | 9 min 15.09 s | 测量空腔、壳层、密度脊统计量及证据分级参数。 | `../results/figures/5_parameter_histogram_matrix.png`；扩展数据参数分布图。 |
+| 6 | `06_OSBs_initial_sensitivity.py` | 37 min 30.93 s | 扰动初始几何，重新检验首次接触分子云的恢复情况。 | `../results/figures/6_initial_sensitivity_overlap.png`；初始条件敏感性图。 |
+| 7 | `07_OSBs_recall_analysis.py` | 0.95 s | 分析独立重复识别结果及不同识别者的一致性。 | `../results/figures/7_independent_repeat_recall.png`；独立识别召回率图。 |
+| 8 | `08_OSBs_random_dust_test.py` | 3 h 12 min 21.40 s | 在固定拟合几何下运行三维 IAAFT 随机密度涨落检验。 | `../results/figures/8_condition_test_joint_p_all30.png`；随机密度检验图。 |
+| 9 | `09_OSBs_shell_amplitude_test.py` | 35.22 s | 比较壳层密度跃变幅度与消光图、恒星样本的不确定度；需要时自动定位已安装的 dustmaps3d 缓存。 | `../results/figures/9_shell_amplitude_vs_extinction_error_3sigma.png`；壳层显著性图。 |
 | 10 | `10_OSBs_bubbles_HMSFR_test.py` | 11 min 09.93 s | 统计与壳层关联的 A/B 级尘埃泡及大质量恒星形成区（HMSFR），并进行随机几何对照。 | `../results/figures/10_shell_assignment_xy.png`、`10_shell_count_random_test_overview.png`；恒星反馈示踪体关联图。 |
 | 11 | `11_OSBs_top_view.py` | 21.01 s | 绘制银河系俯视开放超泡概览及 RGB 分层尘埃图。 | `../results/figures/11_topview_rgb_dust_layers.png`；正文图 1 的源面板。 |
 | 12 | `12_OSBs_dust_slices.py` | 11.47 s | 绘制三个垂直尘埃截面，叠加开放超泡椭圆、尘埃泡和 HMSFR。 | `../results/figures/12_three_dust_slices.png`；正文图 2。 |
@@ -108,7 +108,7 @@ AI 辅助使用声明：整理、撰写说明和一致性检查过程中使用�
 
 ### 补充信息
 
-此处不逐项列出补充信息图号。补充信息中的所有开放超泡识别图均由 `4_OSBs_plotting.py` 生成，并保存在 `../results/SB_figures/`。
+此处不逐项列出补充信息图号。补充信息中的所有开放超泡识别图均由 `04_OSBs_plotting.py` 生成，并保存在 `../results/SB_figures/`。
 
 ## 代码仓库与完整包结构
 
@@ -116,12 +116,13 @@ GitHub 代码仓库的根目录结构如下：
 
 ```text
 milky-way-open-superbubbles/
-|-- 0_Data_preparation_1.py
-|-- 0_Data_preparation_2.py
-|-- 1_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
+|-- 00_Data_preparation_1.py
+|-- 00_Data_preparation_2.py
+|-- 01_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
 |-- final_data_products_description.md
 |-- pipeline_runtime_summary.png
 |-- README.md
+|-- README.zh-CN.md
 |-- run
 `-- run.sh
 ```
@@ -129,14 +130,15 @@ milky-way-open-superbubbles/
 Releases 完整包保留 Code Ocean 的三个目录结构：
 
 ```text
-milky-way-open-superbubbles-v1.0.1/
+milky-way-open-superbubbles-v1.0.2/
 |-- code/
-|   |-- 0_Data_preparation_1.py
-|   |-- 0_Data_preparation_2.py
-|   |-- 1_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
+|   |-- 00_Data_preparation_1.py
+|   |-- 00_Data_preparation_2.py
+|   |-- 01_OSBs_first_contact_MCs.py ... 25_interactive_three_volume_viewer.py
 |   |-- final_data_products_description.md
 |   |-- pipeline_runtime_summary.png
 |   |-- README.md
+|   |-- README.zh-CN.md
 |   |-- run
 |   `-- run.sh
 |-- data/
@@ -175,9 +177,9 @@ milky-way-open-superbubbles-v1.0.1/
 - Python：建议 3.11，以匹配记录的参考环境。
 - 磁盘：随包输入约 0.64 GB；完整流程及生成缓存建议至少预留 10 GB 可用空间。
 - 网络：安装依赖、首次下载所需的 `dustmaps3d` 缓存，以及加载交互式查看器的 Three.js 模块时需要网络。
-- 内存：完整流程建议至少 16 GB；`0_Data_preparation_2.py` 预处理大型原始 FITS 时，可能需要更多内存，具体取决于输入立方体。
+- 内存：完整流程建议至少 16 GB；`00_Data_preparation_2.py` 预处理大型原始 FITS 时，可能需要更多内存，具体取决于输入立方体。
 
-Windows 说明：`4_OSBs_plotting.py` 的全天图需要 `healpy`。在本文记录的原生 Windows Python 环境下，请通过 WSL 运行流程。Code Ocean、Linux 或 macOS 安装 `healpy` 后可以直接运行。
+Windows 说明：`04_OSBs_plotting.py` 的全天图需要 `healpy`。在本文记录的原生 Windows Python 环境下，请通过 WSL 运行流程。Code Ocean、Linux 或 macOS 安装 `healpy` 后可以直接运行。
 
 ## 已检查的参考环境
 
@@ -216,7 +218,7 @@ python -m pip install numpy pandas scipy matplotlib emcee corner pyarrow astropy
 
 依赖中的 `numba` 供脚本 20 使用，`tqdm` 供可选的原始巡天导出进度显示使用。Windows 用户应在 WSL 内创建环境，使 `run.sh` 使用 Linux Python 和其中安装的 `healpy`。
 
-首次使用 `dustmaps3d` 时可能下载 Wang 等人的三维尘埃图缓存。多数脚本所需的处理后尘埃数据，由 `0_Data_preparation_1.py` 生成并写入运行输出目录 `../results/intermediate_output/3d_dust_map_products/`。
+首次使用 `dustmaps3d` 时可能下载 Wang 等人的三维尘埃图缓存。多数脚本所需的处理后尘埃数据，由 `00_Data_preparation_1.py` 生成并写入运行输出目录 `../results/intermediate_output/3d_dust_map_products/`。
 
 ## 快速开始
 
@@ -231,7 +233,7 @@ bash run.sh
 
 Windows 用户请进入 WSL，切换至完整包根目录，激活上述 WSL 虚拟环境后执行相同命令。原生 Windows Python 虚拟环境与 WSL 环境相互独立。
 
-例外是 `0_Data_preparation_2.py`：它需要原始 HI4PI、CfA CO 和 MWISP FITS 立方体，不能仅凭完整包运行。原始数据有数百 GB，不随包分发；包中包含由这些原始数据导出的紧凑 PV 缓存，以及导出这些缓存的代码。
+例外是 `00_Data_preparation_2.py`：它需要原始 HI4PI、CfA CO 和 MWISP FITS 立方体，不能仅凭完整包运行。原始数据有数百 GB，不随包分发；包中包含由这些原始数据导出的紧凑 PV 缓存，以及导出这些缓存的代码。
 
 若逐个手动运行脚本，先从完整包根目录建立输出目录：
 
@@ -244,22 +246,22 @@ mkdir -p ../results ../results/intermediate_output
 
 ```powershell
 # 在 ../results/intermediate_output/3d_dust_map_products/ 生成可复现的三维尘埃数据产品。
-python 0_Data_preparation_1.py
+python 00_Data_preparation_1.py
 
 # 可选：仅用于从原始巡天数据重新导出。
 # 需要外部原始 HI4PI、CfA CO 和 Galactic Plane Survey / MWISP 数据。
 # 完整包的 ../data/COdata/ 和 ../data/HIdata/ 已包含后续所需的紧凑 PV 缓存。
-# python 0_Data_preparation_2.py --mwisp-fits <path> --cfa-fits <path> --hi4pi-fits <path>
+# python 00_Data_preparation_2.py --mwisp-fits <path> --cfa-fits <path> --hi4pi-fits <path>
 
-python 1_OSBs_first_contact_MCs.py
-python 2_OSBs_3D_fitting.py
-python 3_OSBs_MCMC_and_parameter_table.py
-python 4_OSBs_plotting.py
-python 5_OSBs_parameter_statistics.py
-python 6_OSBs_initial_sensitivity.py
-python 7_OSBs_recall_analysis.py
-python 8_OSBs_random_dust_test.py
-python 9_OSBs_shell_amplitude_test.py
+python 01_OSBs_first_contact_MCs.py
+python 02_OSBs_3D_fitting.py
+python 03_OSBs_MCMC_and_parameter_table.py
+python 04_OSBs_plotting.py
+python 05_OSBs_parameter_statistics.py
+python 06_OSBs_initial_sensitivity.py
+python 07_OSBs_recall_analysis.py
+python 08_OSBs_random_dust_test.py
+python 09_OSBs_shell_amplitude_test.py
 python 10_OSBs_bubbles_HMSFR_test.py
 python 11_OSBs_top_view.py
 python 12_OSBs_dust_slices.py
@@ -278,20 +280,20 @@ python 24_RW_like_wave.py
 python 25_interactive_three_volume_viewer.py
 ```
 
-脚本 4 不能在本文记录的原生 Windows Python 环境中直接运行。Windows 请在 WSL 中执行 `bash run.sh`；Code Ocean、Linux、macOS 安装 `healpy` 后可直接执行 `python 4_OSBs_plotting.py`。
+脚本 4 不能在本文记录的原生 Windows Python 环境中直接运行。Windows 请在 WSL 中执行 `bash run.sh`；Code Ocean、Linux、macOS 安装 `healpy` 后可直接执行 `python 04_OSBs_plotting.py`。
 
 ## 数据准备说明
 
 两个 `0_` 脚本生成后续步骤共用的数据产品。
 
-`0_Data_preparation_1.py` 生成：
+`00_Data_preparation_1.py` 生成：
 
 - `../results/intermediate_output/3d_dust_map_products/raw_3d_dust_cube.parquet`
 - `../results/intermediate_output/3d_dust_map_products/smoothed_3d_dust_cube.parquet`
 - `../results/intermediate_output/3d_dust_map_products/xy_mean_dust_map.parquet`
 - `../results/intermediate_output/3d_dust_map_products/radcliffe_wave_dust_slice.csv`
 
-`0_Data_preparation_2.py` 记录从原始巡天立方体导出紧凑 CO/HI PV 缓存的方法，其相对代码目录的输出路径为：
+`00_Data_preparation_2.py` 记录从原始巡天立方体导出紧凑 CO/HI PV 缓存的方法，其相对代码目录的输出路径为：
 
 - `../data/COdata/MWISP_12CO_PV_cache.npz`
 - `../data/COdata/CfA_12CO_PV_cache.npz`
@@ -304,7 +306,7 @@ python 25_interactive_three_volume_viewer.py
 如果不另外提供原始 HI4PI、CfA CO 和 Galactic Plane Survey / MWISP FITS 立方体，就不能直接重跑此导出脚本。数百 GB 的原始数据未分发；脚本 21、22 所需的紧凑缓存已经包含。要从原始数据重建缓存，请显式传入路径：
 
 ```powershell
-python 0_Data_preparation_2.py `
+python 00_Data_preparation_2.py `
   --mwisp-fits <path-to-mosaic_12CO.fits> `
   --cfa-fits <path-to-CfA-FITS-cube> `
   --hi4pi-fits <path-to-HI4PI-CAR.fits>
@@ -350,15 +352,15 @@ HTML 内嵌 uint8 尘埃体纹理、开放超泡几何和尘埃泡标注。它�
 
 ## 可复现性说明
 
-脚本 8 在填补缺失值、按需进行块平均后，使用包含空腔、壳层及周围环境的完整局地原始三维尘埃立方体设定 IAAFT 的傅里叶振幅。它精确保留密度分布，并近似保留功率谱。默认迭代 8 次；迭代次数本身不能保证收敛。详见[脚本 8 内的方法及诊断说明](8_OSBs_random_dust_test.py)。
+脚本 8 在填补缺失值、按需进行块平均后，使用包含空腔、壳层及周围环境的完整局地原始三维尘埃立方体设定 IAAFT 的傅里叶振幅。它精确保留密度分布，并近似保留功率谱。默认迭代 8 次；迭代次数本身不能保证收敛。详见[脚本 8 内的方法及诊断说明](08_OSBs_random_dust_test.py)。
 
 30 个目标分别在 `../results/figures/random_density_diagnostics/` 中保存 `8_SB{id}_original_vs_random.png`（仅 PNG），采用第一组随机实现和标准的 8 次迭代设置。每张对照图的前三行是匹配位置的 XY、XZ、YZ 截面，左列为原始数据，右列为随机实现；下方三个面板展示完整立方体的三维功率谱、功率比和密度分布。图中保留简洁标题、坐标轴、单位与图例；详细方法及诊断数值记入说明和元数据，供撰写发表图注时使用。
 
 六张空间截面共享 `Spectral_r` 色标，在实际检验网格（可选重采样之后）上，分别对每个二维截面直接施加仅用于显示的高斯平滑，面内每个轴的 sigma 均为 1 个体素。功率谱、密度分布和保存数组均使用显示平滑前的立方体；细节见脚本内方法说明。数组、频谱表和元数据保存在 `../results/intermediate_output/8_random_density_fluctuation_test/diagnostics/`。诊断元数据中的路径相对 `code/`，便于迁移；路径约定不改变科学统计量。
 
-在 `code/` 中运行 `python 8_OSBs_random_dust_test.py --targets all --diagnostics-only --iaaft-max-iter 8`，可为每个目标生成一张对照图，而不改写蒙特卡洛样本和概率表。独立诊断运行可通过 `--diagnostic-dir`、`--comparison-fig-dir` 指定输出位置。
+在 `code/` 中运行 `python 08_OSBs_random_dust_test.py --targets all --diagnostics-only --iaaft-max-iter 8`，可为每个目标生成一张对照图，而不改写蒙特卡洛样本和概率表。独立诊断运行可通过 `--diagnostic-dir`、`--comparison-fig-dir` 指定输出位置。
 
-- `0_Data_preparation_2.py` 处理原始 HI4PI、CfA CO 和 Galactic Plane Survey / MWISP FITS 数据；数百 GB 的原始输入未分发，紧凑的后续 PV 缓存已包含。
+- `00_Data_preparation_2.py` 处理原始 HI4PI、CfA CO 和 Galactic Plane Survey / MWISP FITS 数据；数百 GB 的原始输入未分发，紧凑的后续 PV 缓存已包含。
 - 脚本 8 运行三维 IAAFT 随机场检验，是标准分析流程中最耗时的脚本。
 - 脚本 9 自动检查是否安装 `dustmaps3d`，并在可用时自动定位本地三维尘埃图数据包。正常运行只需标准 `dustmaps3d` 缓存，无须额外指定数据路径。
 - 脚本 14、15 默认可以复用轨道缓存；如需完整重算，使用 `--recompute-orbit --recompute-labels`，耗时可能增加。

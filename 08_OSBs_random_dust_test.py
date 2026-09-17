@@ -79,7 +79,7 @@ summary figures. main manages target selection, reproducible random streams,
 realization loops and output tables.
 
 Run from the package root with:
-    python code/8_OSBs_random_dust_test.py --targets all --diagnostics-only
+    python code/08_OSBs_random_dust_test.py --targets all --diagnostics-only
 Omit --diagnostics-only to generate the requested Monte Carlo sample and its
 tables. The script changes its working directory to code/, so relative paths
 passed through --geom-csv, --xy-data-path, --diagnostic-dir and
@@ -201,7 +201,7 @@ def read_local_xyz_cube(parquet_path, x_range, y_range, z_range):
     to x/y/z/dust; density values are retained in their input mag kpc^-1 units.
     No geometry mask is applied to the selected rectangular volume.
     The default raw product is written by query_and_write_raw_cube in
-    0_Data_preparation_1.py: points beyond the queried dmax become NaN and
+    00_Data_preparation_1.py: points beyond the queried dmax become NaN and
     finite densities below 1e-4 mag kpc^-1 become zero. That upstream operation
     does not remove structures according to fitted bubble positions.
     """

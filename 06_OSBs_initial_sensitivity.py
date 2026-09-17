@@ -96,8 +96,8 @@ def _load_module(path: Path, name: str):
 
 def setup_modules():
     """Helper for the documented workflow; scientific assumptions are described in the module header."""
-    s1 = _load_module(HERE / "1_OSBs_first_contact_MCs.py", "pr_stage1_core_for_sensitivity")
-    s2 = _load_module(HERE / "2_OSBs_3D_fitting.py", "pr_stage2_core_for_sensitivity")
+    s1 = _load_module(HERE / "01_OSBs_first_contact_MCs.py", "pr_stage1_core_for_sensitivity")
+    s2 = _load_module(HERE / "02_OSBs_3D_fitting.py", "pr_stage2_core_for_sensitivity")
     return s1, s2
 
 
